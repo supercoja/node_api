@@ -36,16 +36,5 @@
         _.merge(_cats[index],req.body);
         res.json({info: 'cat updated successfully'});
     });
-
-    /* Delete */
-    app.delete('/cat/:id', function (req, res) {
-        Cat.findByIdAndRemove(req.params.id, function(err) {
-            if (err) {
-                res.json({info: 'error during remove cat', error: err});
-            };
-            res.json({info: 'cat removed successfully'});
-        });
-    });
-
-
+    
 };
