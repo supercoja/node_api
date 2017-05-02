@@ -40,7 +40,7 @@
     /* Delete */
     app.delete('/cat/:id',function(req, res){
         _.remove(_cats,function(cat){
-            return _cat.name==req.params.id;
+            return _cats.name==req.params.id;
         });
         res.json({info:'cat removed successfully'});
     });
