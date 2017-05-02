@@ -5,7 +5,7 @@
 
   /* Create */
     app.post('/cat', function (req, res) {
-        _cas.push(req.body);
+        _cats.push(req.body);
         res.json({info:'cat created successfully'});
     });
 
@@ -36,5 +36,12 @@
         _.merge(_cats[index],req.body);
         res.json({info: 'cat updated successfully'});
     });
-    
+
+    /* Delete */
+    app.delete('/cat/:id',function(req, res){
+        _.remove(_cats,function(cat){
+            return _cat.name==req.params.id;
+        });
+        res.json({info:'cat removed successfully'});
+    });
 };
