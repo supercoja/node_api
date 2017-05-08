@@ -3,17 +3,16 @@ var app = express();
 
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/cats');
+mongoose.connect('mongodb://localhost/dogs');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-var cats = require('./cat_routes.js')(app);
+var cats = require('./routes/pet.js')(app);
 
-
-var server = app.listen(3000,function(){
-console.log('Server running at http://127.0.0.1:3000/');
+var server = app.listen(3002,function(){
+console.log('Server running at http://127.0.0.1:3001/');
 });
 
