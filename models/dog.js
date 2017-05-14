@@ -6,4 +6,4 @@ var catSchema = mongoose.Schema({
     type: String
 });
 
-module.exports = mongoose.model('Cat', catSchema);
+module.exports = mongoose.model('Dog', catSchema);
